@@ -57,10 +57,6 @@ def success(request):
     }
     return render(request, "project_app/success.html", userdict)
 
-def hello(request):
-    pass
-    return redirect('/')
-    
 def logoff(request):
     request.session['id'] = None
     return redirect('/')
