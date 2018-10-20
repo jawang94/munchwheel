@@ -54,9 +54,7 @@ def success(request):
     data = User.objects.get(id=request.session['id'])
     userdict = {
         "datakey": data
-        
     }
-    print('helllooooooooooooooooo')
     return render(request, "project_app/success.html", userdict)
 
 def hello(request):
