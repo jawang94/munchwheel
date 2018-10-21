@@ -66,3 +66,5 @@ def hello(request):
 def logoff(request):
     request.session['id'] = None
     return redirect('/')
+
+#jasonLUwashere
