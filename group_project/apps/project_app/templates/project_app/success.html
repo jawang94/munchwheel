@@ -3,33 +3,43 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration successful!</title>
     {% load static %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'project_app/css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'project_app/css/success.css' %}">
     <!-- CSS RESET -->
     <link rel="stylesheet" href="{% static 'project_app/css/normalize.css' %}">
 </head>
 
 <body>
-    <div class="container" style="padding-top:30px">
-        <div class="top_bar">
-            <h1>Munch App</h1>
-            <h3>Welcome, {{datakey.first_name}}</h3>
-            <form action="/home/logoff" method="POST">
-                {% csrf_token %}
-                <button>Log off</button>
-            </form>
-        </div>
+    <div class="top">
+        <h1>How 
+    Hungry
+        Are
+            You?
+        </h1>
+        <h6>A food decision application designed by:
+                        Jason Lu
+                            Masa Hanatate
+                                and Jason Wang
+        </h6>
+    </div>
 
-        
-        <div class="container, outline">
-            <h1>Success! Welcome, {{datakey.first_name}}!</h1>
-            <h3>You have been successfully {{request.session.message}}!</h3>
-            <h5>Hit the button below to go to the wheel:</h5>
-            <button onclick="window.location.href='/wheel'">To Wheel</button>
-        </div>
+    <div class="box">
+        <h2>Success</h2>
+        <h3> Welcome, {{datakey.first_name}}!</h3>
+        <h4>Click below to get started</h4>
+    </div>
+
+    <div class="navbar">
+        <form action="/wheel" method="POST" class="wheel">
+            {% csrf_token %}
+            <button>Wheel</button>
+        </form>
+    </div>
 </body>
 
 </html>

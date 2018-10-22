@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>H2AY</title>
     {% load static%}
-    {% load static%}
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'project_app/css/preferences.css' %}">
     <!-- CSS RESET -->
@@ -52,6 +51,14 @@
         <form action="/process_preferences" method="POST">
             <h2>Your Preferences</h2>
             {% csrf_token %}
+            <label>
+                <p class="label-txt">City</p>
+                <input type="text" class="input" name="city" placeholder="Bellevue">
+            </label>
+            <label>
+                <p class="label-txt">State</p>
+                <input type="text" class="input" name="state" placeholder="WA">
+            </label>
             <label>
                 <div class="dropdown">
                     <div class="select">
