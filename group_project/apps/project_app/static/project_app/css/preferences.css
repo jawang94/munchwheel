@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700,900");
+
+body {
+    width: auto;
+    font-family: "Work Sans", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: white;
+}
+
+h1 {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    font-size: 2.4em;
+    margin: 0;
+    white-space: pre;
+    z-index: 999;
+    color: #F79E02;
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+h2 {
+    display: block;
+    position: absolute;
+    font-size: 2.4em;
+    margin: 0;
+    white-space: pre;
+    z-index: 999;
+    color: black;
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+h1:hover {
+    color: black;
+}
+
+h6 {
+    position: absolute;
+    top: 4em;
+    left: 8em;
+    font-size: 1.0em;
+    margin: 0;
+    white-space: pre;
+    z-index: 999;
+    color: black;
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+
+.navbar {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    height: 10%;
+    border-radius: 20px;
+}
+
+.navbar .wheel {
+    height: 100%;
+}
+
+.navbar .wheel button {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 12px 24px;
+    background: #E85A4F;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: ease .3s;
+    border-radius: 10px;
+}
+
+.navbar button:hover {
+    background: #374785;
+    color: #ffffff;
+}
+
+
+#survey form {
+    width: 60%;
+    height: 20%;
+    margin: 10% auto;
+    background: #efefef;
+    padding: 80px 120px 100px 120px;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10%;
+}
+
+label {
+    display: block;
+    position: relative;
+    margin: 60px 0px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.line-box {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: #BCBCBC;
+}
+
+.line {
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8BC34A;
+    transition: ease .6s;
+}
+
+input:focus+.line-box .line {
+    width: 100%;
+}
+
+.label-txt {
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: -1.6em;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: .8em;
+    letter-spacing: 1px;
+    color: rgb(120, 120, 120);
+    transition: ease .3s;
+}
+
+.label-active {
+    top: -3em;
+}
+
+select {
+    width: 98%;
+    height: 20%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    padding: 12px 24px;
+    background: rgb(220, 220, 220);
+    font-weight: bold;
+    color: rgb(120, 120, 120);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: ease .3s;
+}
+
+button:hover {
+    background: #8BC34A;
+    color: #ffffff;
+}
+
+.create {
+    margin: 0 0 0 0;
+}
+
+
+ul {
+    list-style: none;
+    margin: 2% 5% 0 0;
+}
+
+.error {
+    margin: 2% 0 0 0;
+    display: block;
+}
+
+.rating {
+    display: inline-block;
+    width:auto;
+    height: 10%;
+}
+
+.rating span { float:right; position:relative; }
+
+.rating span input {
+    height: auto;
+    width: auto;
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:30px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+span.msg,
+span.choose {
+  color: #555;
+  padding: 5px 0 10px;
+  display: inherit;
+}
+.container {
+  width: 500px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+/*Styling Selectbox*/
+.dropdown {
+  width: 100%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 2px rgb(204, 204, 204);
+  transition: all .5s ease;
+  position: relative;
+  font-size: 18px;
+  color: #474747;
+  height: 100%;
+  text-align: center;
+}
+.dropdown:hover {
+    background: #F79E02;
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+.dropdown .select > i {
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px;
+}
+.dropdown:hover {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+}
+.dropdown:active {
+    background-color: #f8f8f8;
+}
+.dropdown.active:hover,
+.dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 5px 5px 0 0;
+    background-color: #FAED26;
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg);
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0 1px 5px 5px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9;
+}
+.dropdown .dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+} 
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none;
+}
+.dropdown .dropdown-menu li:hover {
+    background-color: #F79E02;
+}
+.dropdown .dropdown-menu li:active {
+    background-color: #FAED26;
+}
+
+
+.logoff button {
+    position: absolute;
+    left: 90%;
+    top: 5%;
+    width: 10%;
+    height: auto;
+    padding: 12px 24px;
+    background: rgb(220, 220, 220);
+    font-weight: bold;
+    color: rgb(120, 120, 120);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: ease .3s;
+}
+.logoff button:hover {
+    background: #E85A4F;
+}

@@ -3,10 +3,11 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    # url(r'^user_settings$', views.user_settings),
+    url(r'^preferences$', views.preferences),
     url(r'^validate_register$', views.validate_register),
     url(r'^validate_login$', views.validate_login),
     url(r'^login_success$', views.success),
+    url(r'^logout$', views.logout),
     url(r'^wheel$', views.wheel),
-    url(r'^logout$', views.wheel),
+    url(r'^process_preferences$', views.process_preferences),
 ]

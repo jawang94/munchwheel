@@ -3,87 +3,101 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H2AY</title>
     {% load static%}
     <!-- LOCAL CSS -->
     <link rel="stylesheet" href="{% static 'project_app/css/wheel.css' %}">
     <!-- CSS RESET -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel="stylesheet" href="{% static 'project_app/css/normalize.css' %}">
     <!-- JAVASCRIPT -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- <script src="{% static 'project_app/js/wheel.js' %}"></script> -->
-    <script>
-        var count = $(".triangle").length;
-        var spin = function (index) {
-            var $spinner = $(".spinner");
-
-            var value = index >= 0 ? index : parseInt(Math.random() * count);
-
-            var preffix = "index-";
-
-            $spinner.toggleClass("spin");
-            $spinner[0].className = $spinner[0].className.replace(
-                new RegExp("(^|\\s)" + preffix + "\\S+", "g"),
-                ""
-            );
-            $spinner.addClass(preffix + value);
-        };
-    </script>
 </head>
 
 <body>
-
+    <div class="top">
+        <h1>How 
+    Hungry
+        Are
+            You?
+            </h1>
+        <h6>A food decision application designed by:
+                        Jason Lu
+                            Masa Hanatate
+                                and Jason Wang
+        </h6>
+    </div>
 
     <div class="roulette">
         <div class="spinner">
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">1</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">2</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">3</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">4</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">5</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">6</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">7</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">8</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">9</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">10</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">11</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
             <div class="triangle">
-                <!--span.text=String.fromCharCode(65+i)--><span class="text">12</span>
+                <!--span.text=String.fromCharCode(65+i)--><span class="text">?</span>
             </div>
         </div>
         <div class="button button-spin" onclick="spin()"><span>MUNCH</span></div>
     </div>
-    <h1>Pure CSS
-        Spinning
-        Roulette
-        Wheel</h1>
-    <button>Logout</button>
+
+    <div class="navbar">
+        <form action="/preferences" method="POST" class="preferences">
+            {% csrf_token %}
+            <button>Preferences</button>
+        </form>
+    </div>
 
 </body>
+
+<script>
+    var count = $(".triangle").length;
+    var spin = function (index) {
+        var $spinner = $(".spinner");
+
+        var value = index >= 0 ? index : parseInt(Math.random() * count);
+
+        var preffix = "index-";
+
+        $spinner.toggleClass("spin");
+        $spinner[0].className = $spinner[0].className.replace(
+            new RegExp("(^|\\s)" + preffix + "\\S+", "g"),
+            "");
+
+        $spinner.addClass(preffix + value);
+    };
+</script>
+
 
 </html>
