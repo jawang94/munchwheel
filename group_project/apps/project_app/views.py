@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect
-import requests
-=======
 from django.shortcuts import render, redirect, HttpResponse
->>>>>>> API
 from django.contrib import messages
 from apps.project_app.models import User
 import bcrypt
@@ -76,14 +71,6 @@ def preferences(request):
     return render(request, "project_app/preferences.html")
 
 def process_preferences(request):
-<<<<<<< HEAD
-    request.session['type'] = request.POST['type']
-    request.session['price'] = request.POST['price']
-    request.session['rating'] = request.POST['rating']
-    return redirect('/wheel')
-
-def results(request):
-=======
     request.session['category'] = request.POST['category']
     request.session['price'] = request.POST['price']
     request.session['city'] = request.POST["city"]
@@ -91,7 +78,6 @@ def results(request):
 
 def results(request):
     print(request.session['data'])
->>>>>>> API
     return render(request, "project_app/testsubject.html")
 
 def success(request):
@@ -106,32 +92,6 @@ def logout(request):
     return redirect('/')
 
 def yelpAPI(request):
-<<<<<<< HEAD
-    is_cached = ('business' in request.session)
-
-    if not is_cached:
-        zip_code = 98006
-        response = requests.get('https://api.yelp.com/v3/businesses/search/%s' % zip_code)
-        request.session['business'] = response.json()
-
-    business = request.session['business']
-
-    return render(request, 'project_app/testsubject.html', {
-        'mileradius' : business['radius'],
-        'location' : business['location'],
-        'latitude': business['latitude'],
-        'longitude': business['longitude'],
-        'phone' : business['phone'],
-        'url' : business['url'],
-        'rating' : business[ 'rating'],
-        'review_count' : business[ 'review_count'],
-        'price' : business['price'],
-        'name': business['name'],
-        'categories': business['categories'],
-        'is_cached': is_cached,
-        'api_key': '8fJisUcWi6_6M8q1TqXwV64duaoO7p6rs5Sh4xI9b6abzOxLgAHFW_OrD2jgX7rRH0a2bwm4Uhio4-5JiVQCbTHyvrzs8667unV_strpWIR6xq-CLwuT5V-uBH3KW3Yx',  # Don't do this! This is just an example. Secure your keys properly.\
-    })
-=======
     category = 'term=chinese'
     location = 'location=Seattle'
     pricepoint = 'price=2'
@@ -167,4 +127,3 @@ def yelpAPI(request):
 
     # return render(request, 'project_app/testsubject.html')
     return HttpResponse(result, content_type="application/json")
->>>>>>> API
