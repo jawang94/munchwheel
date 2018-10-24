@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>H2AY</title>
     {% load static%}
-    {% load static%}
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'project_app/css/preferences.css' %}">
     <!-- CSS RESET -->
@@ -53,6 +52,14 @@
             <h2>Your Preferences</h2>
             {% csrf_token %}
             <label>
+                <p class="label-txt">City</p>
+                <input type="text" class="input" name="city" placeholder="Bellevue">
+            </label>
+            <label>
+                <p class="label-txt">State</p>
+                <input type="text" class="input" name="state" placeholder="WA">
+            </label>
+            <label>
                 <div class="dropdown">
                     <div class="select">
                         <span>Type of Cuisine</span>
@@ -60,16 +67,19 @@
                     </div>
                     <input type="hidden" name="type">
                     <ul class="dropdown-menu">
-                        <li value="">Chinese</li>
-                        <li value="">Mexican</li>
-                        <li value="">Japanese</li>
-                        <li value="">Italian</li>
-                        <li value="">Greek</li>
-                        <li value="">French</li>
-                        <li value="">Thai</li>
-                        <li value="">Spanish</li>
-                        <li value="">Indian</li>
-                        <li value="">Mediterranean</li>
+                        <li value="american restaurant">American</li>
+                        <li value="chinese restaurant">Chinese</li>
+                        <li value="french restaurant">French</li>
+                        <li value="greek restaurant">Greek</li>
+                        <li value="indian restaurant">Indian</li>
+                        <li value="italian restaurant">Italian</li>
+                        <li value="japanese restaurant">Japanese</li>
+                        <li value="korean restaurant">Korean</li>
+                        <li value="mediterranean restaurant">Mediterranean</li>
+                        <li value="mexican restaurant">Mexican</li>
+                        <li value="spanish restaurant">Spanish</li>
+                        <li value="thai restaurant">Thai</li>
+                        <li value="vietnamese restaurant">Vietnamese</li>
                     </ul>
                 </div>
             </label>
@@ -79,12 +89,12 @@
                         <span>Your Price Range</span>
                         <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="type">
+                    <input type="hidden" name="price">
                     <ul class="dropdown-menu">
-                        <li value="">Seriously broke or maybe just frugal $</li>
-                        <li value="">Definitely frugal but making an exception $$</li>
-                        <li value="">Quality over frugality always $$$</li>
-                        <li value="">Too baller to care about the bill $$$$</li>
+                        <li value="1">Seriously broke or maybe just frugal $</li>
+                        <li value="2">Definitely frugal but making an exception $$</li>
+                        <li value="3">Quality over frugality always $$$</li>
+                        <li value="4">Too baller to care about the bill $$$$</li>
                     </ul>
                 </div>
                 </label>
@@ -110,8 +120,9 @@
     </div>
 
 
-    <form action="/logoff" method="POST" class="logoff">
-        <button type="submit">Logoff</button>
+    <form action="/logout" method="POST" class="logout">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
     </form>
 
 
