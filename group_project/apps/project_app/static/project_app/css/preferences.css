@@ -93,21 +93,23 @@ h6 {
 }
 
 #survey form {
-    width: 60%;
-    height: 20%;
-    margin: 10% auto;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    width: 65%;
+    height: 65%;
     background: #efefef;
-    padding: 80px 120px 100px 120px;
+    padding: 2%;
     text-align: center;
     -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 10%;
+    border-radius: 2%;
 }
 
 label {
     display: block;
     position: relative;
-    margin: 30px 0px;
+    margin: 30px;
     text-align: center;
 }
 
@@ -327,7 +329,7 @@ span.choose {
 }
 
 
-.logoff button {
+.logout button {
     position: absolute;
     left: 90%;
     top: 5%;
@@ -343,6 +345,6 @@ span.choose {
     cursor: pointer;
     transition: ease .3s;
 }
-.logoff button:hover {
+.logout button:hover {
     background: #E85A4F;
 }

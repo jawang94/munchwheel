@@ -15,12 +15,33 @@
     <link rel="stylesheet" href="{% static 'project_app/css/index.css' %}">
     <!-- CSS RESET -->
     <link rel="stylesheet" href="{% static 'project_app/css/normalize.css' %}">
-
+    <!-- JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.btn').click(function() {
+                $('.wrap').slideToggle(400);
+            });
+        });
+    </script>
 </head>
 
 <body>
+    <div class="top">
+        <h1>How 
+    Hungry
+        Are
+            You?
+            </h1>
+        <h6>A food decision application designed by:
+                        Jason Lu
+                            Masa Hanatate
+                                and Jason Wang
+        </h6>
+    </div>
+        
+
     <div id="survey">
-        <h1>Munch Wheel</h1>
         <form action="/validate_register" method="POST">
             <h2>Register</h2>
             {% csrf_token %}
@@ -69,7 +90,34 @@
             {% endif %}
         </form>
     </div>
-    <div id="survey">
+
+    <div class="wrap">
+        <div class="container">
+                <form action="/validate_login" method="POST">
+                    {% csrf_token %}
+                    <label>
+                        <p class="label-txt">Email</p>
+                        <input type="email" class="input" name="login_email">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                    </label>
+                    <label>
+                        <p class="label-txt">Password</p>
+                        <input type="password" class="input" name="login_password">
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                    </label>
+                    <button type="submit" class="create">Login</button>
+                    <p class="error">{{request.session.error}}</p>
+                </form>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="btn">Login</div>
+    </div>
+    <!-- <div id="survey">
         <form action="/validate_login" method="POST">
             <h2>Login</h2>
             {% csrf_token %}
@@ -90,7 +138,8 @@
             <button type="submit" class="create">Login</button>
             <p class="error">{{request.session.error}}</p>
         </form>
-    </div>
+    </div> -->
 </body>
+
 
 </html>

@@ -6,12 +6,12 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 class BlogManager(models.Manager):
     def basic_validator(self, postData):
         errors = {}
-        if len(postData['first_name']) < 3:
-            errors["first_name_length"] = "First Name cannot be less than three characters!"
+        if len(postData['first_name']) < 1:
+            errors["first_name_length"] = "First Name cannot be blank!"
         if not postData['first_name'].isalpha():
             errors["first_name_alpha"] = "First Name cannot contain numbers!"
-        if len(postData['last_name']) < 3:
-            errors["last_name_length"] = "Last Name cannot be less than three characters!"
+        if len(postData['last_name']) < 1:
+            errors["last_name_length"] = "Last Name cannot be blank!"
         if not postData['last_name'].isalpha():
             errors["last_name_alpha"] = "Last Name cannot contain numbers!"
         if len(postData['email']) < 1:

@@ -28,6 +28,12 @@
             //     var userRating = this.value;
             //     alert(userRating);
             // }); 
+
+            $(li).click(function(){
+                var val = $(this).attr("value");
+                $("#category").val(val);
+                return true;
+            })
         });
     </script>
 </head>
@@ -53,11 +59,11 @@
             {% csrf_token %}
             <label>
                 <p class="label-txt">City</p>
-                <input type="text" class="input" name="city" placeholder="Bellevue">
+                <input type="text" class="input" name="city" placeholder="ex. Bellevue">
             </label>
             <label>
                 <p class="label-txt">State</p>
-                <input type="text" class="input" name="state" placeholder="WA">
+                <input type="text" class="input" name="state" placeholder="ex. WA">
             </label>
             <label>
                 <div class="dropdown">
@@ -65,18 +71,21 @@
                         <span>Type of Cuisine</span>
                         <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="type">
+                    <input id="category" type="hidden" value="" name="category">
                     <ul class="dropdown-menu">
-                        <li value="">Chinese</li>
-                        <li value="">Mexican</li>
-                        <li value="">Japanese</li>
-                        <li value="">Italian</li>
-                        <li value="">Greek</li>
-                        <li value="">French</li>
-                        <li value="">Thai</li>
-                        <li value="">Spanish</li>
-                        <li value="">Indian</li>
-                        <li value="">Mediterranean</li>
+                        <li id=american>American</li>
+                        <li id=chinese>Chinese</li>
+                        <li id=french>French</li>
+                        <li id=greek>Greek </li>
+                        <li id=indian>Indian</li>
+                        <li id=italian>Italian</li>
+                        <li id=japanese>Japanese</li>
+                        <li id=korean>Korean </li>
+                        <li id=mediterranean>Mediterranean</li>
+                        <li id=mexican>Mexican</li>
+                        <li id=spanish>Spanish</li>
+                        <li id=thai>Thai</li>
+                        <li id=vietnamese>Vietnamese</li>
                     </ul>
                 </div>
             </label>
@@ -86,12 +95,15 @@
                         <span>Your Price Range</span>
                         <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="type">
                     <ul class="dropdown-menu">
-                        <li value="">Seriously broke or maybe just frugal $</li>
-                        <li value="">Definitely frugal but making an exception $$</li>
-                        <li value="">Quality over frugality always $$$</li>
-                        <li value="">Too baller to care about the bill $$$$</li>
+                        <li>Seriously broke or maybe just frugal $
+                            <input type="hidden" value = "1" name="price"></li>
+                        <li>Definitely frugal but making an exception $$
+                            <input type="hidden" value = "1,2" name="price"></li>
+                        <li>Quality over frugality always $$$
+                            <input type="hidden" value = "1,2,3" name="price"></li>
+                        <li>Too baller to care about the bill $$$$
+                            <input type="hidden" value = "1,2,3,4" name="price"></li>
                     </ul>
                 </div>
                 </label>
@@ -117,8 +129,9 @@
     </div>
 
 
-    <form action="/logoff" method="POST" class="logoff">
-        <button type="submit">Logoff</button>
+    <form action="/logout" method="POST" class="logout">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
     </form>
 
 
