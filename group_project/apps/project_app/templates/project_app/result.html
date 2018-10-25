@@ -30,19 +30,23 @@
         </h6>
     </div>
 
+
+    <div class="roulette" onclick="window.location.href='/wheel'">
+        <div class="spinner">
+        </div>
+            <div class="button button-spin"><span>RE-MUNCH</span></div>
+    </div>
+
+    
     <div class="result_bar">
         <h3>
-            {{restaurant_name}}
+            <a href="{{restaurant_url}}" target="_blank">{{restaurant_name}}</a>
             {{price}}
             {{rating}}&#x2606 
         </h3>
         <h4>
             {% for key in restaurant_address %} {{key}} {% endfor %}
             {{restaurant_phone_number}}
-        <!-- </h4>
-        <h5>
-            {{title}}
-        </h5> -->
     </div>
 
     <div id="map">
@@ -52,12 +56,12 @@
         <img src="{{restaurant_image_url}}" alt="restaurant_image">
     </div>
 
-    <div class="navbar">
+    <!-- <div class="navbar">
         <form action="/wheel" method="POST" class="wheel">
             {% csrf_token %}
             <button>Wheel</button>
         </form>
-    </div>
+    </div> -->
 
     <div class="navbar2">
     </div>

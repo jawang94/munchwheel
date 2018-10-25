@@ -6,7 +6,7 @@ urlpatterns = [
     url(r'^preferences$', views.preferences),
     url(r'^validate_register$', views.validate_register),
     url(r'^validate_login$', views.validate_login),
-    url(r'^login_success$', views.success),
+    url(r'^success$', views.success),
     url(r'^logout$', views.logout),
     url(r'^wheel$', views.wheel),
     url(r'^process_preferences$', views.process_preferences),

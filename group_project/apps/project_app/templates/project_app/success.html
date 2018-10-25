@@ -28,16 +28,19 @@
         </h6>
     </div>
 
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        You are registered!
+    </div>
     <div class="box">
         <h2>Success</h2>
         <h3> Welcome, {{datakey.first_name}}!</h3>
-        <h4>Click below to get started</h4>
     </div>
 
     <div class="navbar">
-        <form action="/wheel" method="POST" class="wheel">
+        <form action="/preferences" method="POST" class="wheel">
             {% csrf_token %}
-            <button>Wheel</button>
+            <button>Click to get started</button>
         </form>
     </div>
 </body>

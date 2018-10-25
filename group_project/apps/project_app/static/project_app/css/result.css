@@ -67,12 +67,11 @@ h6 {
     border-radius: 20px;
     border: 3px solid #374785;
     background: #374785;
+    text-align: center;
 }
 
 h3 {
-    position: absolute;
-    left: 1%;
-    bottom: 10%;
+    margin: 0 0 10% 0;
     font-size: 38px;
     height: auto;
     width: auto;
@@ -85,8 +84,18 @@ h4 {
     top: 20%;
     font-size: 25px;
     height: auto;
-    width: auto;
+    width: 100%;
     color: gold;
+}
+
+a {
+    color: white;
+    transition: ease .3s;
+    
+}
+
+a:hover {
+    color: #E85A4F;
 }
 
 #map {
@@ -151,4 +160,60 @@ img {
 .navbar button:hover {
     background: #374785;
     color: #ffffff;
+}
+
+.roulette {
+    position: relative;
+    z-index: 1;
+    font-size: 1em;
+    width: 50em;
+    height: 10em;
+    top: 79.5%;
+    left: 50%;
+    margin-top: -25em;
+    margin-left: -25em;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    font-weight: 800;
+    background: #E85A4F;
+    position: absolute;
+    z-index: 999;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    color: white;
+    text-decoration: wavy;
+    cursor: pointer;
+    letter-spacing: -0.05em;
+    transition: ease .5s;
+}
+
+.button:hover,
+.button:active {
+    color: #FAED26;
+    background: #374785;
+}
+
+.button-spin {
+    width: 10em;
+    height: 10em;
+    line-height: 10em;
+    top: 83%;
+    left: 50%;
+    margin-left: -5em;
+    margin-top: -5em;
+    font-weight: 800;
+    z-index: 998;
+}
+
+.button-spin:active {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.button-spin span {
+    font-size: 1.6em;
 }

@@ -96,8 +96,8 @@ h6 {
     position: absolute;
     left: 15%;
     top: 15%;
-    width: 65%;
-    height: 65%;
+    width: 70%;
+    height: 70%;
     background: #efefef;
     padding: 2%;
     text-align: center;
@@ -206,76 +206,85 @@ ul {
 
 .rating {
     display: inline-block;
-    width:auto;
+    width: auto;
     height: 10%;
 }
 
-.rating span { float:right; position:relative; }
+.rating span {
+    float: right;
+    position: relative;
+}
 
 .rating span input {
     height: auto;
     width: auto;
-    position:absolute;
-    top:0px;
-    left:0px;
-    opacity:0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
 }
+
 .rating span label {
-    display:inline-block;
-    width:30px;
-    height:30px;
-    text-align:center;
-    color:#FFF;
-    background:#ccc;
-    font-size:30px;
-    margin-right:2px;
-    line-height:30px;
-    border-radius:50%;
-    -webkit-border-radius:50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #FFF;
+    background: #ccc;
+    font-size: 30px;
+    margin-right: 2px;
+    line-height: 30px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
-.rating span:hover ~ span label,
+
+.rating span:hover~span label,
 .rating span:hover label,
 .rating span.checked label,
-.rating span.checked ~ span label {
-    background:#F90;
-    color:#FFF;
+.rating span.checked~span label {
+    background: #F90;
+    color: #FFF;
 }
 
 span.msg,
 span.choose {
-  color: #555;
-  padding: 5px 0 10px;
-  display: inherit;
+    color: #555;
+    padding: 5px 0 10px;
+    display: inherit;
 }
+
 .container {
-  width: 500px;
-  margin: 50px auto 0;
-  text-align: center;
+    width: 500px;
+    margin: 50px auto 0;
+    text-align: center;
 }
 
 /*Styling Selectbox*/
 .dropdown {
-  width: 100%;
-  display: inline-block;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 2px rgb(204, 204, 204);
-  transition: all .5s ease;
-  position: relative;
-  font-size: 18px;
-  color: #474747;
-  height: 100%;
-  text-align: center;
+    width: 100%;
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 18px;
+    color: #474747;
+    height: 100%;
+    text-align: center;
 }
+
 .dropdown:hover {
     background: #F79E02;
 }
+
 .dropdown .select {
     cursor: pointer;
     display: block;
     padding: 10px;
 }
-.dropdown .select > i {
+
+.dropdown .select>i {
     font-size: 13px;
     color: #888;
     cursor: pointer;
@@ -283,21 +292,26 @@ span.choose {
     float: right;
     line-height: 20px;
 }
+
 .dropdown:hover {
     box-shadow: 0 0 4px rgb(204, 204, 204);
 }
+
 .dropdown:active {
     background-color: #f8f8f8;
 }
+
 .dropdown.active:hover,
 .dropdown.active {
     box-shadow: 0 0 4px rgb(204, 204, 204);
     border-radius: 5px 5px 0 0;
     background-color: #FAED26;
 }
-.dropdown.active .select > i {
+
+.dropdown.active .select>i {
     transform: rotate(-90deg);
 }
+
 .dropdown .dropdown-menu {
     position: absolute;
     background-color: #fff;
@@ -312,18 +326,22 @@ span.choose {
     overflow-y: auto;
     z-index: 9;
 }
+
 .dropdown .dropdown-menu li {
     padding: 10px;
     transition: all .2s ease-in-out;
     cursor: pointer;
-} 
+}
+
 .dropdown .dropdown-menu {
     padding: 0;
     list-style: none;
 }
+
 .dropdown .dropdown-menu li:hover {
     background-color: #F79E02;
 }
+
 .dropdown .dropdown-menu li:active {
     background-color: #FAED26;
 }
@@ -345,6 +363,45 @@ span.choose {
     cursor: pointer;
     transition: ease .3s;
 }
+
 .logout button:hover {
     background: #E85A4F;
+}
+
+.btn {
+    font-weight: bold;
+    width: 20%;
+    background-color: #5bc1ff;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 0 5px 5px;
+}
+
+.btn:hover {
+    background-color: #8BC34A;
+}
+
+.wrap {
+    position: absolute;
+    left: 15%;
+    top: 19%;
+    width: 70%;
+    height: 66%;
+    background: #efefef;
+    padding: 2%;
+    text-align: center;
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 2%;
+    display: none;
+}
+
+.container2 {
+    position: absolute;
+    top: 0;
+    left: 75%;
+    width: 800px;
+    overflow: hidden;
 }

@@ -16,18 +16,15 @@ body {
     z-index: 1;
     font-size: 1em;
     width: 50em;
-    height: 25%;
+    height: 11em;
     top: 75%;
     left: 50%;
     margin-top: -25em;
     margin-left: -25em;
     text-align: center;
-    background: #374785;
+    background: #14A76C;
     border-radius: 20px;
     transition: ease 0.5s;
-}
-.box:hover {
-    background: #E85A4F;
 }
 
 h1 {
@@ -125,10 +122,10 @@ h6 {
 .navbar .wheel button {
     position: absolute;
     font-size: 1em;
-    width: 50%;
+    width: 25%;
     height: 100%;
-    top: 0;
-    left: 25%;
+    top: -50%;
+    left: 37%;
     right: 0;
     margin-top: -12.25em;
     text-align: center;
@@ -137,9 +134,35 @@ h6 {
     transition: ease 0.5s;
     font-weight: bold;
     font-size: 25px;
+    color: #ffffff;
 }
 
 .navbar button:hover {
     background: #374785;
-    color: #ffffff;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #14A76C; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 20%;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
 }
