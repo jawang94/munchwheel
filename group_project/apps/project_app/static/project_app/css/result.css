@@ -59,7 +59,7 @@ h6 {
 
 .result_bar {
     position: absolute;
-    top: 15%;
+    top: 14%;
     left: 15%;
     right: 0;
     width: 70%;
@@ -100,7 +100,7 @@ a:hover {
 
 #map {
     position: absolute;
-    top: 27%;
+    top: 26%;
     left: 15%;
     right: 0;
     width: 34%;
@@ -112,7 +112,7 @@ a:hover {
 
 .photo_block {
     position: absolute;
-    top: 27%;
+    top: 26%;
     left: 51%;
     right: 0;
     width: 34%;
@@ -166,10 +166,9 @@ img {
     position: relative;
     z-index: 1;
     font-size: 1em;
-    width: 50em;
-    height: 10em;
-    top: 79.5%;
-    left: 50%;
+    width: 5em;
+    top: 102%;
+    left: 71.5%;
     margin-top: -25em;
     margin-left: -25em;
 }
@@ -189,12 +188,20 @@ img {
     cursor: pointer;
     letter-spacing: -0.05em;
     transition: ease .5s;
+    opacity:0.95;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
 }
 
 .button:hover,
 .button:active {
     color: #FAED26;
     background: #374785;
+    opacity:1;
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
 }
 
 .button-spin {
@@ -204,7 +211,7 @@ img {
     top: 83%;
     left: 50%;
     margin-left: -5em;
-    margin-top: -5em;
+    margin-top: -10em;
     font-weight: 800;
     z-index: 998;
 }
