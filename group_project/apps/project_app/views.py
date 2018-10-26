@@ -71,7 +71,7 @@ def wheel(request):
     return render(request, "project_app/wheel.html")
 
 def process_wheel(request):
-    randnum = randint(0, 29)
+    randnum = randint(0, 14)
     request.session['randnum'] = randnum
     return redirect("/results")
 
@@ -118,29 +118,27 @@ def process_advanced_preferences(request):
 
 def results(request):
     google_api = 'AIzaSyCX4x-GRqo8LUQQyYnCy6rgmC5PsefMtes'
-    x = 8000
-    category = f'term={request.session["category"]},{request.session["glutenfree"]},{request.session["vegetarian"]},{request.session["vegan"]}'
-    opennow = 'open_now=true'
+    x = 15000
+    category = f'term={request.session["category"]}'
     location = f'location={request.session["city"]},{request.session["state"]}'
     pricepoint = f'price={request.session["price"]}'
-    limit = 'limit=30'
+    limit = 'limit=15'
     rating = 'sort_by=rating'
     radius = f'radius={x}'
-    attribute = f'attributes=hot_and_new'
-    hotnew_term = ' term=restaurant'
-    opennow = 'open_now=true'
-    response = requests.get(URL + '?{}&{}&{}&{}&{}&{}&{}'.format(category, location, pricepoint, limit, rating, radius, opennow), headers = header)
+    response = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(category, location, pricepoint, limit, rating, radius), headers = header)
     business = response.json()
     result = json.dumps(business, sort_keys=True, indent=4)
     restdict = json.loads(result)
-###########################################################################################################################
-    # this is top 10 restaurants in your area part
-    response2 = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(hotnew_term, location, limit, rating, radius, attribute), headers = header)
-    business2 = response2.json()
-    result2 = json.dumps(business2, sort_keys=True, indent=4)
-    restdict2 = json.loads(result2)
-    # end of top 10 restaurant part
 
+    print(len(restdict['businesses']))
+
+    if len(restdict['businesses']) == 0:
+        return redirect('/wheel')
+    elif len(restdict['businesses']) < int(request.session['randnum']):
+        randnum = randint(0, (len(restdict['businesses'])-1))
+        request.session['randnum'] = randnum
+
+    print(request.session['randnum'])
 
     context = {
         'api_key' : google_api,
@@ -159,19 +157,7 @@ def results(request):
         'restaurant_url' : restdict['businesses'][request.session['randnum']]['url'],
         'restaurant_phone_number' : restdict['businesses'][request.session['randnum']]['display_phone'],
         'restaurant_image_url' : restdict['businesses'][request.session['randnum']]['image_url'],
-############################################################################################################################
-        # this is top 10 restaurants in your area part
-        # 'restaurant_name2' : restdict2['businesses'][request.session[i]]['name'],
-        # 'title2' : restdict2['businesses'][request.session[i]]['categories'][0]['title'],
-        # 'price2' : restdict2['businesses'][request.session[i]]['price'],
-        # 'rating2' : restdict2['businesses'][request.session[i]]['rating'],
-        # 'review_count2' : restdict2['businesses'][request.session[i]]['review_count'],
-        # 'restaurant_address2' : restdict2['businesses'][request.session[i]]['location']['display_address'],
-        # 'restaurant_url2' : restdict2['businesses'][request.session[i]]['url'],
-        # 'restaurant_phone_number2' : restdict2['businesses'][request.session[i]]['display_phone'],
-        # end of top 10 restaurant part
     }
-    print(request.session['vegetarian'])
     return render(request, "project_app/result.html", context)
 
 def success(request):

@@ -60,7 +60,7 @@ h6 {
 .result_bar {
     position: absolute;
     top: 14%;
-    left: 15%;
+    left: 14.5%;
     right: 0;
     width: 70%;
     height: 10%;
@@ -100,8 +100,8 @@ a:hover {
 
 #map {
     position: absolute;
-    top: 26%;
-    left: 15%;
+    top: 26.5%;
+    left: 14.5%;
     right: 0;
     width: 34%;
     height: 60%;
@@ -112,8 +112,8 @@ a:hover {
 
 .photo_block {
     position: absolute;
-    top: 26%;
-    left: 51%;
+    top: 26.5%;
+    left: 50.5%;
     right: 0;
     width: 34%;
     height: 60%;
@@ -167,8 +167,8 @@ img {
     z-index: 1;
     font-size: 1em;
     width: 5em;
-    top: 102%;
-    left: 71.5%;
+    top: 102.5%;
+    left: 71%;
     margin-top: -25em;
     margin-left: -25em;
 }
