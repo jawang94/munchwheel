@@ -1,7 +1,6 @@
 html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 body {
@@ -10,8 +9,8 @@ body {
 }
 
 #holder {
-    position: absolute;
-    top: 48.5%;
+    position: fixed;
+    top: 50%;
     width: 800px;
     height: 500px;
     position: relative;

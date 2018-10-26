@@ -69,15 +69,16 @@ def wheel(request):
     if 'state' not in request.session:
         request.session['state'] = "WA"
     if 'glutenfree' not in request.session:
-        request.session['glutenfree'] = None
+        request.session['glutenfree'] = ""
     if 'vegetarian' not in request.session:
-        request.session['vegetarian'] = None
+        request.session['vegetarian'] = ""
     if 'vegan' not in request.session:
-        request.session['vegan'] = None
+        request.session['vegan'] = ""
+    print(request.session['glutenfree'],request.session['vegetarian'],request.session['vegan'])
     return render(request, "project_app/wheel.html")
 
 def process_wheel(request):
-    randnum = randint(0, 29)
+    randnum = randint(0, 19)
     request.session['randnum'] = randnum
     return redirect("/results")
 
@@ -107,29 +108,29 @@ def process_preferences(request):
 
 def process_advanced_preferences(request):
     if request.POST.get("gluten", False):
-        request.session['glutenfree'] = None
+        request.session['glutenfree'] = ""
     else:
         request.session['glutenfree'] = "gluten free"
     
     if request.POST.get("vegetarian", False):
-        request.session['vegetarian'] = None
+        request.session['vegetarian'] = ""
     else:
         request.session['vegetarian'] = "vegetarian"
     
     if request.POST.get("vegan", False):
-        request.session['vegan'] = None
+        request.session['vegan'] = ""
     else:
         request.session['vegan'] = "vegan"
     return redirect('/preferences')
 
 def results(request):
     google_api = 'AIzaSyCX4x-GRqo8LUQQyYnCy6rgmC5PsefMtes'
-    x = 8000
+    x = 10000
     category = f'term={request.session["category"]},{request.session["glutenfree"]},{request.session["vegetarian"]},{request.session["vegan"]}'
-    opennow = 'open_now=False'
+    opennow = 'open_now=True'
     location = f'location={request.session["city"]},{request.session["state"]}'
     pricepoint = f'price={request.session["price"]}'
-    limit = 'limit=30'
+    limit = 'limit=20'
     rating = 'sort_by=rating'
     radius = f'radius={x}'
     # attribute = f'attributes=hot_and_new'
@@ -188,7 +189,7 @@ def success(request):
 
 def delete(request):
     request.session['glutenfree'] = ""
-    request.session['vegitarian'] = ""
+    request.session['vegetarian'] = ""
     request.session['vegan'] = ""
     return redirect('/preferences')
 
