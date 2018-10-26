@@ -9,7 +9,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: white;
+    background-color: hsl(0, 10%, 89%)
 }
 
 h1 {
@@ -354,7 +354,7 @@ span.choose {
     width: 10%;
     height: auto;
     padding: 12px 24px;
-    background: rgb(220, 220, 220);
+    background: #efefef;
     font-weight: bold;
     color: rgb(120, 120, 120);
     border: none;

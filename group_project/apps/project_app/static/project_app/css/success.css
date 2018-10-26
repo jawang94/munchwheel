@@ -8,7 +8,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: white;
+    background-color: hsl(0, 10%, 89%);
 }
 
 .box {
