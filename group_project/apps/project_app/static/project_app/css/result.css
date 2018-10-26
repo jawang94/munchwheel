@@ -163,14 +163,13 @@ img {
 }
 
 .roulette {
-    position: relative;
+    position: fixed;
+    top: 60%;
+    left: 50.1%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     font-size: 1em;
     width: 5em;
-    top: 102%;
-    left: 71.5%;
-    margin-top: -25em;
-    margin-left: -25em;
 }
 
 .button {

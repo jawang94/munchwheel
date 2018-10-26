@@ -135,10 +135,10 @@ def results(request):
     restdict = json.loads(result)
 ###########################################################################################################################
     # this is top 10 restaurants in your area part
-    response2 = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(hotnew_term, location, limit, rating, radius, attribute), headers = header)
-    business2 = response2.json()
-    result2 = json.dumps(business2, sort_keys=True, indent=4)
-    restdict2 = json.loads(result2)
+    # response2 = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(hotnew_term, location, limit, rating, radius, attribute), headers = header)
+    # business2 = response2.json()
+    # result2 = json.dumps(business2, sort_keys=True, indent=4)
+    # restdict2 = json.loads(result2)
     # end of top 10 restaurant part
 
 
