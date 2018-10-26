@@ -131,32 +131,33 @@
 
     <div class="wrap">
         <div class="s007">
-            <form action="/process_preferences" method="POST">
+            <form action="/process_advanced_preferences" method="POST">
+            {% csrf_token %}
             <div class="inner-form">
                 <div class="advance-search">
                 <span class="desc">Advanced Search</span>
                 <label class="container">Gluten Free
-                    <input type="checkbox" checked="checked" name="gluten">
+                    <input type="checkbox" checked="checked" name="gluten" value="gluten">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label class="container">Vegetarian
-                    <input type="checkbox" name="vegetarian">
+                    <input type="checkbox" name="vegetarian" value="vegetarian">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label class="container">Vegan
-                    <input type="checkbox" name="vegan">
+                    <input type="checkbox" name="vegan" value="vegan">
                     <span class="checkmark"></span>
                 </label>
                 
                 <div class="row third">
                     <div class="input-field">
                     <button class="btn-search" type="submit">Confirm</button>
-                </form>
-                <form action="/delete" method="POST">
+            </form>
+            <form action="/delete" method="POST">
                     <button class="btn-delete" id="delete">Delete</button>                
-                </form>
+            </form>
                     </div>
                 </div>
                 </div>
