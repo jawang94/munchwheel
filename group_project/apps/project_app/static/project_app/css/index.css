@@ -3,7 +3,7 @@
 body {
   font-family: "Work Sans", sans-serif;
   user-select: none;
-  background-color: white;
+  background-color: hsl(0, 10%, 89%)
 }
 
 h1 {
@@ -153,10 +153,9 @@ ul {
   top: 0;
   width: 100%;
   height: 80%;
-  background: white;
+  background-color: hsl(0, 10%, 89%);
   padding: 20% 20px 40px 20px;
   display: none;
-  border-bottom: 1px solid #5bc1ff;
 }
 
 .container2 {
