@@ -60,9 +60,8 @@ h6 {
 .result_bar {
     position: absolute;
     top: 14%;
-    left: 14.5%;
-    right: 0;
-    width: 70%;
+    right: 9%;
+    width: 81%;
     height: 10%;
     border-radius: 20px;
     border: 3px solid #374785;
@@ -101,9 +100,9 @@ a:hover {
 #map {
     position: absolute;
     top: 26.5%;
-    left: 14.5%;
+    left: 10%;
     right: 0;
-    width: 34%;
+    width: 40%;
     height: 60%;
     border-radius: 20px;
     border: 3px solid #374785;
@@ -115,7 +114,7 @@ a:hover {
     top: 26.5%;
     left: 50.5%;
     right: 0;
-    width: 34%;
+    width: 40%;
     height: 60%;
     border-radius: 20px;
     border: 3px solid #374785;
@@ -163,14 +162,11 @@ img {
 }
 
 .roulette {
-    position: relative;
-    z-index: 1;
+    position: absolute;
     font-size: 1em;
-    width: 5em;
-    top: 102.5%;
-    left: 71%;
-    margin-top: -25em;
-    margin-left: -25em;
+    width: auto;
+    top: 65%;
+    left: 50.3%;
 }
 
 .button {
@@ -224,3 +220,60 @@ img {
 .button-spin span {
     font-size: 1.6em;
 }
+
+#resultContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+}
+
+  @media only screen and (max-width: 600px) {
+    h3,h4 {
+      font-size: 16px;
+    }
+    .photo_block {
+        display: none;
+    }
+    #map {
+        width: 80%;
+    }
+    .roulette {
+        position: absolute;
+        font-size: 1em;
+        width: auto;
+        top: 41%;
+        left: 82%;
+    }
+    
+    .button {
+        display: inline-block;
+        text-align: center;
+        font-weight: 800;
+        background: #E85A4F;
+        position: absolute;
+        z-index: 999;
+        border-radius: 100%;
+        border: none;
+        box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+        color: white;
+        text-decoration: wavy;
+        cursor: pointer;
+        letter-spacing: -0.05em;
+        transition: ease .5s;
+        opacity:1;
+        -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    
+    .button:hover,
+    .button:active {
+        color: #FAED26;
+        background: #374785;
+        opacity:1;
+        -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        transform: scale(0.6);
+    }
+  }

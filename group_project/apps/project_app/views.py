@@ -71,7 +71,7 @@ def wheel(request):
     return render(request, "project_app/wheel.html")
 
 def process_wheel(request):
-    randnum = randint(0, 14)
+    randnum = randint(0, 19)
     request.session['randnum'] = randnum
     return redirect("/results")
 
@@ -118,11 +118,11 @@ def process_advanced_preferences(request):
 
 def results(request):
     google_api = 'AIzaSyCX4x-GRqo8LUQQyYnCy6rgmC5PsefMtes'
-    x = 15000
+    x = 10000
     category = f'term={request.session["category"]}'
     location = f'location={request.session["city"]},{request.session["state"]}'
     pricepoint = f'price={request.session["price"]}'
-    limit = 'limit=15'
+    limit = 'limit=20'
     rating = 'sort_by=rating'
     radius = f'radius={x}'
     response = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(category, location, pricepoint, limit, rating, radius), headers = header)
