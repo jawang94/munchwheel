@@ -92,12 +92,13 @@ h6 {
     color: #ffffff;
 }
 
+
 #survey form {
     position: absolute;
     left: 15%;
-    top: 15%;
+    top: 25%;
     width: 70%;
-    height: 70%;
+    height: 50%;
     background: #efefef;
     padding: 2%;
     text-align: center;
@@ -404,4 +405,40 @@ span.choose {
     left: 75%;
     width: 800px;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .logout button {
+        position: absolute;
+        left: 75%;
+        top: 82.5%;
+        width: 25%;
+
+    }
+    h2 {
+        font-size: 24px;
+    }
+    #survey form {
+        position: absolute;
+        left: 10%;
+        top: 25%;
+        width: 80%;
+        height: 55%;
+        background: #efefef;
+        padding: 2%;
+        text-align: center;
+        -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 2%;
+    }
+    .wrap {
+        height: 60%;
+        width: 100%;
+        top: 25%;
+        left: 0;
+    }
+    .container {
+        width: auto;
+        text-align: center;
+    }
 }

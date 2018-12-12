@@ -22,6 +22,12 @@ body {
     margin-left: -25em;
 }
 
+@media only screen and (max-width: 600px) {
+    .roulette {
+        top: 55%;
+    }
+} 
+
 .roulette .spinner {
     width: 10em;
     height: 10em;
