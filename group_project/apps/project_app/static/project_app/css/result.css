@@ -242,8 +242,8 @@ img {
         position: absolute;
         font-size: 1em;
         width: auto;
-        top: 41%;
-        left: 82%;
+        top: 43%;
+        left: 81%;
     }
     
     .button {
@@ -262,9 +262,9 @@ img {
         letter-spacing: -0.05em;
         transition: ease .5s;
         opacity:1;
-        -webkit-transform: scale(0.5);
-        -ms-transform: scale(0.5);
-        transform: scale(0.5);
+        -webkit-transform: scale(0.45);
+        -ms-transform: scale(0.45);
+        transform: scale(0.45);
     }
     
     .button:hover,
