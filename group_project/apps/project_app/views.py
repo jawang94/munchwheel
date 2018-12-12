@@ -122,13 +122,18 @@ def results(request):
     category = f'term={request.session["category"]}'
     location = f'location={request.session["city"]},{request.session["state"]}'
     pricepoint = f'price={request.session["price"]}'
+<<<<<<< HEAD
     limit = 'limit=20'
+=======
+    limit = 'limit=15'
+>>>>>>> 534c2afe21ec7b691b5d96846a8fa17a00e864a3
     rating = 'sort_by=rating'
     radius = f'radius={x}'
     response = requests.get(URL + '?{}&{}&{}&{}&{}&{}'.format(category, location, pricepoint, limit, rating, radius), headers = header)
     business = response.json()
     result = json.dumps(business, sort_keys=True, indent=4)
     restdict = json.loads(result)
+<<<<<<< HEAD
 
     print(len(restdict['businesses']))
 
@@ -140,6 +145,12 @@ def results(request):
 
     print(request.session['randnum'])
 
+=======
+    
+    if len(restdict['businesses']) < int(request.session['randnum']):
+        request.session['randnum'] = str(len(restdict['businesses']))
+    
+>>>>>>> 534c2afe21ec7b691b5d96846a8fa17a00e864a3
     context = {
         'api_key' : google_api,
         'latitude' : restdict['businesses'][request.session['randnum']]['coordinates']['latitude'],
